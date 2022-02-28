@@ -1,7 +1,7 @@
 FROM python:3.7-slim
 # FROM ubuntu:20.04
 
-EXPOSE 7000
+EXPOSE 8000
 
 ENV PYTHONDONTWRITEBYTECODE=1
 
@@ -16,4 +16,4 @@ COPY . /app
 RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
 
-CMD ["gunicorn", "--bind", "0.0.0.0:7000", "craigslist_proj.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "craigslist_proj.wsgi"]
